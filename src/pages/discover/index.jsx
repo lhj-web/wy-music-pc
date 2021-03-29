@@ -11,12 +11,12 @@ export default memo(function HJDiscover(props) {
   
   return (
     <DiscoverWrapper>
-      <div class="top">
+      <div className="top">
         <TopMenu className="wrap-v1">
           {
             discoverMenu.map((item, index) => {
               return (
-                <div className="item" key={item}>
+                <div className="item" key={item.title}>
                   <NavLink to={item.link}>{item.title}</NavLink>
                 </div>
               )
