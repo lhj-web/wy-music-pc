@@ -8,6 +8,7 @@ import store from './store';
 
 import HJAppHeader from '@/components/app-header';
 import HJAppFooter from '@/components/app-footer';
+import HJAppPlayerBar from 'pages/player/app-player-bar'
 
 export default function App() {
   return (
@@ -17,6 +18,7 @@ export default function App() {
           <HJAppHeader />
           {renderRoutes(routes)}
           <HJAppFooter />
+          <HJAppPlayerBar />
         </div>
       </BrowserRouter>
     </Provider>
