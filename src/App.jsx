@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Suspense } from 'react';
 import { BrowserRouter } from 'react-router-dom';
 import { renderRoutes } from 'react-router-config';
 import { Provider } from 'react-redux';
@@ -8,7 +8,7 @@ import store from './store';
 
 import HJAppHeader from '@/components/app-header';
 import HJAppFooter from '@/components/app-footer';
-import HJAppPlayerBar from 'pages/player/app-player-bar'
+import HJAppPlayerBar from 'pages/player/app-player-bar';
 
 export default function App() {
   return (
@@ -16,7 +16,7 @@ export default function App() {
       <BrowserRouter>
         <div>
           <HJAppHeader />
-          {renderRoutes(routes)}
+          <Suspense fallback={<div>loading</div>}>{renderRoutes(routes)}</Suspense>
           <HJAppFooter />
           <HJAppPlayerBar />
         </div>
